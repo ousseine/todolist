@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_task_todo', {'id': task.id}) }}" class="w-100 form-todo">
+    <input type="hidden" name="_token" value="{{ csrf_token('todo' ~ task.id) }}">
+    <button type="submit" class="btn btn-sm"><i class="bi bi-{{ task.isTodo ? 'square-fill' : 'square' }}"></i></button>
+</form>

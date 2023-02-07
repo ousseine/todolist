@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte{% endblock %}
+{% block body_id 'register' %}
+{% block body %}
+    <div class="w-25 m-auto">
+        <h1 class="fs-3 my-4">Créer un compte</h1>
+
+        {{ form_start(registrationForm) }}
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+            {{ form_widget(registrationForm.email, {
+                label: false,
+                attr: {placeholder: 'Email'}
+            }) }}
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            {{ form_widget(registrationForm.plainPassword, {
+                label: false,
+                attr: {placeholder: 'Mot de passe'}
+            }) }}
+        </div>
+
+        {{ form_row(registrationForm.agreeTerms, {
+            label: 'Veillez accepter les termes de confidentialités'
+        }) }}
+
+        <button type="submit" class="btn btn-md btn-primary w-100">Créer un compte</button>
+        {{ form_end(registrationForm) }}
+
+        <p class="mb-0 mt-5 text-center text-muted">Vous avez un compte ? <a href="{{ path('app_login') }}">connectez-vous</a></p>
+    </div>
+{% endblock %}
+

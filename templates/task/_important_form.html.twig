@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_task_important', {'id': task.id}) }}" class="form-important">
+    <input type="hidden" name="_token" value="{{ csrf_token('important' ~ task.id) }}">
+    <button class="btn btn-sm"><i class="bi bi-{{ task.isImportant ? 'star-fill' : 'star' }}"></i></button>
+</form>

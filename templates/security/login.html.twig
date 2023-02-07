@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+{% block body_id 'login' %}
+
+{% block body %}
+    <div class="w-25 m-auto">
+        <form method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+
+            <h1 class="fs-3 my-4 font-weight-normal">Connexion</h1>
+
+            <div class="mb-3">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+                    <input type="email" value="{{ last_username }}" name="email" placeholder="Email" class="form-control" id="inputEmail" autocomplete="email" required autofocus>
+                    <label for="inputEmail"></label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group mb-1">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" name="password" placeholder="Mot de passe" class="form-control" id="inputPassword" autocomplete="current-password" required>
+                    <label for="inputPassword"></label>
+                </div>
+                <div class="text-end">
+                    <a href="{{ path('app_forgot_password_request') }}" style="font-size: 13px">mot de passe oublier</a>
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="form-check mb-3">
+                <input type="checkbox" id="formLogin" class="form-check-input" name="_remember_me">
+                <label for="formLogin" class="form-check-label">Se souvenir de moi</label>
+            </div>
+
+            <button class="btn btn-md btn-primary w-100" type="submit">Connexion</button>
+        </form>
+
+        <p class="mb-0 mt-5 text-center text-muted">Vous n'avez pas de compte ? <a href="{{ path('app_register') }}">créer un compte</a></p>
+    </div>
+{% endblock %}

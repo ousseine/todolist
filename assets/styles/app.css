@@ -1,0 +1,54 @@
+.app {
+    padding: 20px;
+}
+
+.btn:focus {
+    border: none;
+    box-shadow: none;
+}
+
+#form-input-task-edit {
+    padding: 0;
+    background: inherit;
+    color: rgb(171, 182, 194);
+}
+#form-input-task-edit:focus {
+    box-shadow: none;
+    color: #fff;
+}
+#list-tasks-end .form-edit #form-input-task-edit {text-decoration: line-through;}
+.nav-link {padding: 5px 10px;}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #4c9be8 !important;
+}
+
+form button:focus {border: none}
+form button i {font-size: 22px;}
+.form-end button i {color: #4e5d6c; margin-right: 10px}
+.form-end button i:hover {color: rgba(78, 93, 108, .6)}
+.form-delete button i {color: #d9534f;}
+.form-edit button i {color: #5cb85c;}
+.form-important button i {color: #ffc107;}
+.form-important button i:hover {color: #ffac07;}
+.form-todo button i {color: #fff;}
+.form-todo button i:hover {color: rgb(171, 182, 194);}
+
+@media (max-width: 992px) {
+    .w-50 {width: 80% !important;}
+    .w-25 { width: 60% !important }
+}
+
+@media (max-width: 768px) {
+    .w-50 {
+        width: 100% !important;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .w-25 {
+        width: 100% !important;
+        padding: 0 20px;
+    }
+}
