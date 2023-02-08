@@ -17,15 +17,21 @@
     color: #fff;
 }
 #list-tasks-end .form-edit #form-input-task-edit {text-decoration: line-through;}
+#list-tasks-end .card {
+    background-color: initial;
+    border: none inherit;
+}
 .nav-link {padding: 5px 10px;}
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #4c9be8 !important;
 }
 
-form button:focus {border: none}
-form button i {font-size: 22px;}
-.form-end button i {color: #4e5d6c; margin-right: 10px}
+form .btn {margin: 0; outline: none; padding: 0}
+form .btn:focus {border: none !important; box-shadow: none !important;}
+form .btn:focus {border: none; box-shadow: none; outline: none !important}
+form button i {font-size: 20px;}
+.form-end button i {color: #4e5d6c;}
 .form-end button i:hover {color: rgba(78, 93, 108, .6)}
 .form-delete button i {color: #d9534f;}
 .form-edit button i {color: #5cb85c;}

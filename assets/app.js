@@ -7,5 +7,3 @@ import './bootstrap';
 import 'bootswatch/dist/superhero/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-
-import './js/toggle'
